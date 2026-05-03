@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suzgi AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 2rem;">
+
+    <div class="card" style="width: 100%; max-width: 800px;">
+        <h1 style="text-align: center; margin-bottom: 2rem;">
+            <span style="color: var(--secondary-blue);">Suzgi AI: </span>
+            СБА қаупін бағалау
+        </h1>
+        
+        <form id="predict-form">
+            <div class="grid" style="margin-bottom: 2.5rem;">
+                
+                <div class="input-group">
+                    <label>Fasting Blood Sugar / Қандағы глюкоза (mg/dL)</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button type="button" onclick="stepVal(this, -1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">-</button>
+                        <input type="number" step="any" min="50" max="400" value="95.00" name="FastingBloodSugar" required style="flex: 1; text-align: center; margin: 0;">
+                        <button type="button" onclick="stepVal(this, 1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">+</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>HbA1c / Гликирленген гемоглобин (%)</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button type="button" onclick="stepVal(this, -1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">-</button>
+                        <input type="number" step="any" min="4" max="15" value="5.50" name="HbA1c" required style="flex: 1; text-align: center; margin: 0;">
+                        <button type="button" onclick="stepVal(this, 1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">+</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Serum Creatinine / Сарысудағы креатинин (mg/dL)</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button type="button" onclick="stepVal(this, -1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">-</button>
+                        <input type="number" step="any" min="0.1" max="15" value="0.90" name="SerumCreatinine" required style="flex: 1; text-align: center; margin: 0;">
+                        <button type="button" onclick="stepVal(this, 1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">+</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>BUN Levels / Қандағы азот мочевинасы (mg/dL)</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button type="button" onclick="stepVal(this, -1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">-</button>
+                        <input type="number" step="any" min="5" max="100" value="15.00" name="BUNLevels" required style="flex: 1; text-align: center; margin: 0;">
+                        <button type="button" onclick="stepVal(this, 1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">+</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>GFR / Гломерулярлы сүзу жылдамдығы (mL/min/1.73m²)</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button type="button" onclick="stepVal(this, -1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">-</button>
+                        <input type="number" step="any" min="0" max="150" value="90.00" name="GFR" required style="flex: 1; text-align: center; margin: 0;">
+                        <button type="button" onclick="stepVal(this, 1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">+</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Protein In Urine / Зәрдегі белок деңгейі (0-4+)</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button type="button" onclick="stepVal(this, -1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">-</button>
+                        <input type="number" step="any" min="0" max="4" value="0.00" name="ProteinInUrine" required style="flex: 1; text-align: center; margin: 0;">
+                        <button type="button" onclick="stepVal(this, 1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">+</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Sodium / Натрий (mEq/L)</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button type="button" onclick="stepVal(this, -1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">-</button>
+                        <input type="number" step="any" min="110" max="160" value="140.00" name="Sodium" required style="flex: 1; text-align: center; margin: 0;">
+                        <button type="button" onclick="stepVal(this, 1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">+</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Hemoglobin / Гемоглобин деңгейі (g/dL)</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button type="button" onclick="stepVal(this, -1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">-</button>
+                        <input type="number" step="any" min="5" max="20" value="14.00" name="Hemoglobin" required style="flex: 1; text-align: center; margin: 0;">
+                        <button type="button" onclick="stepVal(this, 1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">+</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Cholesterol Total / Жалпы холестерин (mg/dL)</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button type="button" onclick="stepVal(this, -1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">-</button>
+                        <input type="number" step="any" min="100" max="400" value="180.00" name="CholesterolTotal" required style="flex: 1; text-align: center; margin: 0;">
+                        <button type="button" onclick="stepVal(this, 1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">+</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Cholesterol HDL / HDL холестерині (mg/dL)</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button type="button" onclick="stepVal(this, -1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">-</button>
+                        <input type="number" step="any" min="10" max="100" value="50.00" name="CholesterolHDL" required style="flex: 1; text-align: center; margin: 0;">
+                        <button type="button" onclick="stepVal(this, 1)" style="width: 3rem; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1.5rem; color: #2563eb; display: flex; align-items: center; justify-content: center; transition: 0.3s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0'">+</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Есептеу</button>
+        </form>
+
+        <div id="result-section" style="margin-top: 2.5rem; padding: 2rem; border-radius: 16px; background: #f8fafc; text-align: center; display: none; animation: slideUp 0.5s ease;">
+            <div id="res-prob" style="font-size: 4rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--primary-blue);">0%</div>
+            <div id="res-badge" class="badge" style="font-size: 1.2rem; margin-bottom: 1rem;">Төмен қауіп</div>
+            
+            <div style="margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--text-light);">
+                Нейрожелі: <span id="res-nn">0%</span> | XGBoost: <span id="res-xgb">0%</span>
+            </div>
+
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function stepVal(btn, step) {
+            const wrapper = btn.parentElement;
+            const input = wrapper.querySelector('input');
+            let val = parseFloat(input.value) || 0;
+            let min = parseFloat(input.getAttribute('min'));
+            let max = parseFloat(input.getAttribute('max'));
+            
+            val += step;
+            
+            if (!isNaN(min) && val < min) val = min;
+            if (!isNaN(max) && val > max) val = max;
+            
+            input.value = val.toFixed(2);
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
