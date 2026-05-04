@@ -8,115 +8,346 @@
 </head>
 <body>
     <div class="lang-switch">
-        <button class="lang-btn active">KZ</button>
-        <button class="lang-btn">RU</button>
-        <button class="lang-btn">EN</button>
+        <button class="lang-btn active" onclick="setLang('kk')">KZ</button>
+        <button class="lang-btn" onclick="setLang('ru')">RU</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
+    <div id="lang-kk">
 
-    <section class="hero bg-gradient-hero">
-        <h1 class="title">Suzgi AI</h1>
-        <p class="subtitle">Стандартты талдаулар негізінде созылмалы бүйрек ауруын (СБА) <br> ерте бағалауға арналған  <span style="color: var(--danger);">FT-Transformer + XGBoost</span> ансамбльдік жүйе </p>
-        <a href="model.html" class="btn btn-primary">Модельге өту</a>
-    </section>
+        <section class="hero bg-gradient-hero">
+            <h1 class="title">Suzgi AI</h1>
+            <p class="subtitle">Стандартты талдаулар негізінде созылмалы бүйрек ауруын (СБА) <br> ерте бағалауға арналған <span style="color: var(--danger);">FT-Transformer + XGBoost</span> ансамбльдік жүйе</p>
+            <a href="model.html" class="btn btn-primary">Модельге өту</a>
+        </section>
 
-    <section class="container" style="padding-top: 6rem;">
-        <h2 class="section-title">💡 Біздің шешіміміз</h2>
-        <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <p><strong>Suzgi AI</strong> – стандартты қан және зәр талдаулары негізінде созылмалы бүйрек ауруының қаупін ерте кезеңде бағалайтын жасанды интеллект жүйесі. Жүйе FT-Transformer және XGBoost алгоритмдерін біріктіріп, күрделі медициналық деректер арасындағы байланыстарды талдайды және нақты нәтиже береді.</p>
-        </div>
-    </section>
+        <section class="container" style="padding-top: 6rem;">
+            <h2 class="section-title">💡 Біздің шешіміміз</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p><strong>Suzgi AI</strong> – стандартты қан және зәр талдаулары негізінде созылмалы бүйрек ауруының қаупін ерте кезеңде бағалайтын жасанды интеллект жүйесі. Жүйе FT-Transformer және XGBoost алгоритмдерін біріктіріп, күрделі медициналық деректер арасындағы байланыстарды талдайды және нақты нәтиже береді.</p>
+            </div>
+        </section>
 
-    <section class="container" style="padding-top: 6rem;">
-        <h2 class="section-title">⚙️ Ерекшелігі</h2>
-        <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center; background: var(--accent-blue); border: none;">
-            <p style="color: var(--primary-blue); font-weight: 600; font-size: 1.1rem;">Жүйе тек 10 негізгі клиникалық көрсеткішті пайдалана отырып, жоғары дәлдікке қол жеткізеді. Бұл модельді жеңіл, жылдам және практикада қолдануға ыңғайлы етеді.</p>
-        </div>
-    </section>
+        <section class="container" style="padding-top: 6rem;">
+            <h2 class="section-title">⚙️ Ерекшелігі</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center; background: var(--accent-blue); border: none;">
+                <p style="color: var(--primary-blue); font-weight: 600; font-size: 1.1rem;">Жүйе тек 10 негізгі клиникалық көрсеткішті пайдалана отырып, жоғары дәлдікке қол жеткізеді. Бұл модельді жеңіл, жылдам және практикада қолдануға ыңғайлы етеді.</p>
+            </div>
+        </section>
 
-    <section class="container" style="padding-top: 6rem; padding-bottom: 6rem;">
-        <h2 class="section-title">Неге бұл мәселе өзекті?</h2>
-        <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <p>Созылмалы бүйрек ауруы (СБА) қазіргі кезде жаһандық денсаулық сақтаудың негізгі мәселелерінің бірі болып саналады. <b>Болжам бойынша, 2040 жылға қарай ол дүниежүзі бойынша өлімнің бесінші себебіне айналады.</b> Сонымен қатар, табыс деңгейі жоғары елдерде трансплантация мен диализге кететін шығындар жылдық денсаулық сақтау бюджетінің 2-3%-ын құрайды. Ал табыс деңгейі төмен немесе орташа елдерде өмір сүретін халықтың басым бөлігі диализ бен бүйрек трансплантациясына қол жеткізе алмайды. СБА ұзақ уақыт бойы симптомсыз өтетіндіктен, оны ерте сатыда анықтау қиын, сол себепті ауру көбіне кеш анықталаы, ал оның қаупін алдын ала бағалайтын қолжетімді скрининг тәсілдерін дамыту өзекті. Бұл тұрғыда қан мен зәрдің стандартты талдаулары ерекше мәнге ие, себебі олар көпшілікке қолжетімді және салыстырмалы түрде арзан. Алайда, бұл көрсеткіштердің СБА-мен байланысы бірнеше фактордың бірлескен әсеріне тәуелді болуы мүмкін, сондықтан мұндай күрделі заңдылықтарды анықтауда машиналық оқыту және терең оқыту әдістерін қолданудың маңызы жоғары.</p>
-        </div>
-    </section>
+        <section class="container" style="padding-top: 6rem; padding-bottom: 6rem;">
+            <h2 class="section-title">Неге бұл мәселе өзекті?</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p>Созылмалы бүйрек ауруы (СБА) қазіргі кезде жаһандық денсаулық сақтаудың негізгі мәселелерінің бірі болып саналады. <b>Болжам бойынша, 2040 жылға қарай ол дүниежүзі бойынша өлімнің бесінші себебіне айналады.</b> Сонымен қатар, табыс деңгейі жоғары елдерде трансплантация мен диализге кететін шығындар жылдық денсаулық сақтау бюджетінің 2-3%-ын құрайды. Ал табыс деңгейі төмен немесе орташа елдерде өмір сүретін халықтың басым бөлігі диализ бен бүйрек трансплантациясына қол жеткізе алмайды. СБА ұзақ уақыт бойы симптомсыз өтетіндіктен, оны ерте сатыда анықтау қиын, сол себепті ауру көбіне кеш анықталады, ал оның қаупін алдын ала бағалайтын қолжетімді скрининг тәсілдерін дамыту өзекті. Бұл тұрғыда қан мен зәрдің стандартты талдаулары ерекше мәнге ие, себебі олар көпшілікке қолжетімді және салыстырмалы түрде арзан. Алайда, бұл көрсеткіштердің СБА-мен байланысы бірнеше фактордың бірлескен әсеріне тәуелді болуы мүмкін, сондықтан мұндай күрделі заңдылықтарды анықтауда машиналық оқыту және терең оқыту әдістерін қолданудың маңызы жоғары.</p>
+            </div>
+        </section>
 
-    <section class="container" style="padding-bottom: 6rem;">
-        <h2 class="section-title">👥 Кім үшін?</h2>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-            <div class="card" style="text-align: center;">
-                <h3 style="font-size: 3rem; margin-bottom: 1rem;">👨‍⚕️</h3>
-                <h3 style="color: var(--primary-blue);">Дәрігерлер үшін</h3>
-                <p>Клиникалық шешім қабылдауды жеңілдетеді</p>
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">👥 Кім үшін?</h2>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="card" style="text-align: center;">
+                    <h3 style="font-size: 3rem; margin-bottom: 1rem;">👨‍⚕️</h3>
+                    <h3 style="color: var(--primary-blue);">Дәрігерлер үшін</h3>
+                    <p>Клиникалық шешім қабылдауды жеңілдетеді</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3 style="font-size: 3rem; margin-bottom: 1rem;">🔬</h3>
+                    <h3 style="color: var(--primary-blue);">Зертханалар үшін</h3>
+                    <p>Нәтижелерді автоматты талдау</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3 style="font-size: 3rem; margin-bottom: 1rem;">👨‍👩‍👧‍👦</h3>
+                    <h3 style="color: var(--primary-blue);">Халық үшін</h3>
+                    <p>Өз денсаулығын бақылау құралы</p>
+                </div>
             </div>
-            <div class="card" style="text-align: center;">
-                <h3 style="font-size: 3rem; margin-bottom: 1rem;">🔬</h3>
-                <h3 style="color: var(--primary-blue);">Зертханалар үшін</h3>
-                <p>Нәтижелерді автоматты талдау</p>
-            </div>
-            <div class="card" style="text-align: center;">
-                <h3 style="font-size: 3rem; margin-bottom: 1rem;">👨‍👩‍👧‍👦</h3>
-                <h3 style="color: var(--primary-blue);">Халық үшін</h3>
-                <p>Өз денсаулығын бақылау құралы</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="container" style="padding-bottom: 6rem;">
-        <h2 class="section-title">Біздің мақсатымыз</h2>
-        <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <p>Стандартты талдаулар негізінде созылмалы бүйрек ауруы (СБА) қаупін ерте бағалау үшін назар аудару механизмі мен XGBoost алгоритмі біріктірілген гибридті ансамбльдік жүйені құрып, оның тиімділігін машиналық оқытудың басқа әдістерімен салыстыру және экономикалық тиімділігін бағалау.</p>
-        </div>
-    </section>
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">Біздің мақсатымыз</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p>Стандартты талдаулар негізінде созылмалы бүйрек ауруы (СБА) қаупін ерте бағалау үшін назар аудару механизмі мен XGBoost алгоритмі біріктірілген гибридті ансамбльдік жүйені құрып, оның тиімділігін машиналық оқытудың басқа әдістерімен салыстыру және экономикалық тиімділігін бағалау.</p>
+            </div>
+        </section>
 
-    <section class="container" style="padding-bottom: 6rem;">
-        <h2 class="section-title">Артықшылықтары</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>⚡ Жоғары дәлдік</h3>
-                <p>93.8% дәлдік және 96.2% сезімталдық көрсеткіштері арқылы жүйе СБА қаупін жоғары сенімділікпен анықтайды және қателесу ықтималдығын айтарлықтай төмендетеді.</p>
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">Артықшылықтары</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>⚡ Жоғары дәлдік</h3>
+                    <p>93.8% дәлдік және 96.2% сезімталдық көрсеткіштері арқылы жүйе СБА қаупін жоғары сенімділікпен анықтайды және қателесу ықтималдығын айтарлықтай төмендетеді.</p>
+                </div>
+                <div class="card">
+                    <h3>💸 Минималды шығын</h3>
+                    <p>Бір диагностиканың құны небәрі 4.5 теңге - бұл технологияны жаппай қолдануға мүмкіндік беретін ультра-қолжетімді шешім.</p>
+                </div>
+                <div class="card">
+                    <h3>🚀 1000× тиімділік</h3>
+                    <p>Дәстүрлі тәсілдермен салыстырғанда аналитикалық шығындарды 1000 есеге дейін қысқартады, дәрігер уақытын үнемдейді және процесті автоматтандырады.</p>
+                </div>
+                <div class="card">
+                    <h3>🧠 Интеллектуалды диагностика</h3>
+                    <p>1659+ пациент деректеріне негізделген модель күрделі клиникалық заңдылықтарды анықтап, адамға байқалмайтын тәуекелдерді табады.</p>
+                </div>
+                <div class="card">
+                    <h3>🛡️ Қымбат емнің алдын алу</h3>
+                    <p>Жүйе ерте кезеңде анықтау арқылы $15 000 - $30 000 тұратын ауыр емдеу шығындарының алдын алуға мүмкіндік береді.</p>
+                </div>
+                <div class="card">
+                    <h3>🌍 Масштабталатын шешім</h3>
+                    <p>Қарапайым 10 талдауға негізделген жүйе ауылдық амбулаториядан бастап ірі клиникаларға дейін оңай енгізіледі</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>💸 Минималды шығын</h3>
-                <p>Бір диагностиканың құны небәрі 4.5 теңге - бұл технологияны жаппай қолдануға мүмкіндік беретін ультра-қолжетімді шешім.</p>
-            </div>
-            <div class="card">
-                <h3>🚀 1000× тиімділік</h3>
-                <p>Дәстүрлі тәсілдермен салыстырғанда аналитикалық шығындарды 1000 есеге дейін қысқартады, дәрігер уақытын үнемдейді және процесті автоматтандырады.</p>
-            </div>
-            <div class="card">
-                <h3>🧠 Интеллектуалды диагностика</h3>
-                <p>1659+ пациент деректеріне негізделген модель күрделі клиникалық заңдылықтарды анықтап, адамға байқалмайтын тәуекелдерді табады.</p>
-            </div>
-            <div class="card">
-                <h3>🛡️ Қымбат емнің алдын алу</h3>
-                <p>Жүйе ерте кезеңде анықтау арқылы $15 000 - $30 000 тұратын ауыр емдеу шығындарының алдын алуға мүмкіндік береді.</p>
-            </div>
-            <div class="card">
-                <h3>🌍 Масштабталатын шешім</h3>
-                <p>Қарапайым 10 талдауға негізделген жүйе ауылдық амбулаториядан бастап ірі клиникаларға дейін оңай енгізіледі</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="container" style="padding-bottom: 6rem;">
-        <h2 class="section-title">📈 Күтілетін нәтиже</h2>
-        <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center; border-left: 5px solid var(--success);">
-            <p style="font-size: 1.1rem; color: var(--text-dark);">Жүйе СБА-ны ерте анықтау арқылы ауыр асқынулардың алдын алуға, емдеу шығындарын азайтуға және пациенттердің өмір сапасын жақсартуға мүмкіндік береді.</p>
-        </div>
-    </section>
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">📈 Күтілетін нәтиже</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center; border-left: 5px solid var(--success);">
+                <p style="font-size: 1.1rem; color: var(--text-dark);">Жүйе СБА-ны ерте анықтау арқылы ауыр асқынулардың алдын алуға, емдеу шығындарын азайтуға және пациенттердің өмір сапасын жақсартуға мүмкіндік береді.</p>
+            </div>
+        </section>
 
-    <section class="container" style="padding-bottom: 6rem;">
-    <h2 class="section-title">Автор туралы</h2>
-    <div class="card" style="max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-        <img src="profile.png" alt="Ережепов Санжар" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent-blue); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15); flex-shrink: 0;">
-        <div style="flex: 1; min-width: 250px; text-align: left;">
-            <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem; color: var(--primary-blue);">Ережепов Санжар</h3>
-            <p style="font-size: 1.1rem; color: var(--text-light);">
-                Ақмола облысы, Көкшетау қаласы, Абай атындағы (қазақ тілінде оқытылатын) дарынды балаларға арналған №3 облыстық мамандандырылған мектеп-интернатының 9-сынып оқушысы.
-            </p>
-        </div>
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">Автор туралы</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <img src="profile.png" alt="Ережепов Санжар" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent-blue); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15); flex-shrink: 0;">
+                <div style="flex: 1; min-width: 250px; text-align: left;">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem; color: var(--primary-blue);">Ережепов Санжар</h3>
+                    <p style="font-size: 1.1rem; color: var(--text-light);">
+                        Ақмола облысы, Көкшетау қаласы, Абай атындағы (қазақ тілінде оқытылатын) дарынды балаларға арналған №3 облыстық мамандандырылған мектеп-интернатының 9-сынып оқушысы.
+                    </p>
+                </div>
+            </div>
+        </section>
 
     </div>
-</section>
+    <div id="lang-ru" style="display: none;">
+
+        <section class="hero bg-gradient-hero">
+            <h1 class="title">Suzgi AI</h1>
+            <p class="subtitle">Ансамблевая система <span style="color: var(--danger);">FT-Transformer + XGBoost</span> <br> для ранней оценки хронической болезни почек (ХБП) на основе стандартных анализов</p>
+            <a href="model.html" class="btn btn-primary">Перейти к модели</a>
+        </section>
+
+        <section class="container" style="padding-top: 6rem;">
+            <h2 class="section-title">💡 Наше решение</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p><strong>Suzgi AI</strong> — система искусственного интеллекта, которая оценивает риск хронической болезни почек на ранней стадии по стандартным анализам крови и мочи. Система объединяет алгоритмы FT-Transformer и XGBoost, анализирует сложные взаимосвязи в медицинских данных и выдаёт точный результат.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding-top: 6rem;">
+            <h2 class="section-title">⚙️ Особенность</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center; background: var(--accent-blue); border: none;">
+                <p style="color: var(--primary-blue); font-weight: 600; font-size: 1.1rem;">Система достигает высокой точности, используя всего 10 ключевых клинических показателей. Это делает модель лёгкой, быстрой и удобной для практического применения.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding-top: 6rem; padding-bottom: 6rem;">
+            <h2 class="section-title">Почему эта проблема актуальна?</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p>Хроническая болезнь почек (ХБП) является одной из главных проблем глобального здравоохранения. <b>По прогнозам, к 2040 году она станет пятой причиной смертности в мире.</b> В странах с высоким уровнем дохода расходы на трансплантацию и диализ составляют 2–3% годового бюджета здравоохранения. При этом большинство жителей стран с низким и средним уровнем дохода не имеют доступа к диализу и трансплантации почек. Поскольку ХБП долгое время протекает без симптомов, её сложно выявить на ранней стадии, а болезнь нередко обнаруживается слишком поздно. В связи с этим разработка доступных методов скрининга становится крайне актуальной. Стандартные анализы крови и мочи имеют особое значение — они общедоступны и относительно недороги. Однако связь этих показателей с ХБП может определяться совокупным влиянием нескольких факторов, поэтому для выявления подобных сложных закономерностей важно применять методы машинного и глубокого обучения.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">👥 Для кого?</h2>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="card" style="text-align: center;">
+                    <h3 style="font-size: 3rem; margin-bottom: 1rem;">👨‍⚕️</h3>
+                    <h3 style="color: var(--primary-blue);">Для врачей</h3>
+                    <p>Упрощает принятие клинических решений</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3 style="font-size: 3rem; margin-bottom: 1rem;">🔬</h3>
+                    <h3 style="color: var(--primary-blue);">Для лабораторий</h3>
+                    <p>Автоматический анализ результатов</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3 style="font-size: 3rem; margin-bottom: 1rem;">👨‍👩‍👧‍👦</h3>
+                    <h3 style="color: var(--primary-blue);">Для населения</h3>
+                    <p>Инструмент контроля собственного здоровья</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">Наша цель</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p>Разработать гибридную ансамблевую систему, объединяющую механизм внимания и алгоритм XGBoost, для ранней оценки риска ХБП на основе стандартных анализов, сравнить её эффективность с другими методами машинного обучения и оценить экономическую целесообразность.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">Преимущества</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>⚡ Высокая точность</h3>
+                    <p>Точность 93.8% и чувствительность 96.2% — система выявляет риск ХБП с высокой степенью достоверности и существенно снижает вероятность ошибки.</p>
+                </div>
+                <div class="card">
+                    <h3>💸 Минимальные затраты</h3>
+                    <p>Стоимость одной диагностики составляет всего 4.5 тенге — ультрадоступное решение, позволяющее применять технологию в массовом масштабе.</p>
+                </div>
+                <div class="card">
+                    <h3>🚀 Эффективность 1000×</h3>
+                    <p>Снижает аналитические затраты до 1000 раз по сравнению с традиционными методами, экономит время врачей и автоматизирует процесс.</p>
+                </div>
+                <div class="card">
+                    <h3>🧠 Интеллектуальная диагностика</h3>
+                    <p>Модель, обученная на данных 1659+ пациентов, выявляет сложные клинические закономерности и обнаруживает риски, незаметные для человека.</p>
+                </div>
+                <div class="card">
+                    <h3>🛡️ Профилактика дорогостоящего лечения</h3>
+                    <p>Раннее выявление позволяет предотвратить расходы на тяжёлое лечение стоимостью от $15 000 до $30 000.</p>
+                </div>
+                <div class="card">
+                    <h3>🌍 Масштабируемое решение</h3>
+                    <p>Система, основанная на простых 10 анализах, легко внедряется — от сельской амбулатории до крупных клиник.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">📈 Ожидаемый результат</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center; border-left: 5px solid var(--success);">
+                <p style="font-size: 1.1rem; color: var(--text-dark);">Система позволит предотвратить тяжёлые осложнения за счёт раннего выявления ХБП, снизить затраты на лечение и улучшить качество жизни пациентов.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">Об авторе</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <img src="profile.png" alt="Ережепов Санжар" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent-blue); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15); flex-shrink: 0;">
+                <div style="flex: 1; min-width: 250px; text-align: left;">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem; color: var(--primary-blue);">Ережепов Санжар</h3>
+                    <p style="font-size: 1.1rem; color: var(--text-light);">
+                        Ученик 9-го класса областной специализированной школы-интерната №3 для одарённых детей имени Абая (с казахским языком обучения), г. Кокшетау, Акмолинская область.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <div id="lang-en" style="display: none;">
+
+        <section class="hero bg-gradient-hero">
+            <h1 class="title">Suzgi AI</h1>
+            <p class="subtitle">An <span style="color: var(--danger);">FT-Transformer + XGBoost</span> ensemble system <br> for early detection of Chronic Kidney Disease (CKD) from standard lab tests</p>
+            <a href="model.html" class="btn btn-primary">Go to Model</a>
+        </section>
+
+        <section class="container" style="padding-top: 6rem;">
+            <h2 class="section-title">💡 Our Solution</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p><strong>Suzgi AI</strong> is an artificial intelligence system that assesses the risk of chronic kidney disease at an early stage using standard blood and urine tests. The system combines FT-Transformer and XGBoost algorithms, analyzes complex relationships in medical data, and delivers accurate results.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding-top: 6rem;">
+            <h2 class="section-title">⚙️ Key Feature</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center; background: var(--accent-blue); border: none;">
+                <p style="color: var(--primary-blue); font-weight: 600; font-size: 1.1rem;">The system achieves high accuracy using only 10 key clinical indicators. This makes the model lightweight, fast, and easy to deploy in real-world clinical practice.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding-top: 6rem; padding-bottom: 6rem;">
+            <h2 class="section-title">Why Does This Matter?</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p>Chronic Kidney Disease (CKD) is one of the major challenges facing global healthcare today. <b>It is projected to become the fifth leading cause of death worldwide by 2040.</b> In high-income countries, spending on transplantation and dialysis accounts for 2–3% of the annual healthcare budget. Meanwhile, the majority of people in low- and middle-income countries have no access to dialysis or kidney transplantation. Because CKD is often asymptomatic for years, early detection is difficult and the disease is frequently diagnosed too late. Developing accessible screening tools to assess risk in advance is therefore critically important. Standard blood and urine tests are particularly valuable in this context — they are widely available and relatively affordable. However, the relationship between these indicators and CKD may depend on the combined effect of multiple factors, which is why the use of machine learning and deep learning methods is essential for uncovering such complex patterns.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">👥 Who Is It For?</h2>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="card" style="text-align: center;">
+                    <h3 style="font-size: 3rem; margin-bottom: 1rem;">👨‍⚕️</h3>
+                    <h3 style="color: var(--primary-blue);">For Doctors</h3>
+                    <p>Simplifies clinical decision-making</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3 style="font-size: 3rem; margin-bottom: 1rem;">🔬</h3>
+                    <h3 style="color: var(--primary-blue);">For Laboratories</h3>
+                    <p>Automated analysis of test results</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3 style="font-size: 3rem; margin-bottom: 1rem;">👨‍👩‍👧‍👦</h3>
+                    <h3 style="color: var(--primary-blue);">For the Public</h3>
+                    <p>A personal health monitoring tool</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">Our Goal</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p>To build a hybrid ensemble system combining an attention mechanism and XGBoost algorithm for early CKD risk assessment based on standard tests, compare its performance against other machine learning methods, and evaluate its economic efficiency.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">Advantages</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>⚡ High Accuracy</h3>
+                    <p>With 93.8% accuracy and 96.2% sensitivity, the system detects CKD risk with high confidence and significantly reduces the probability of error.</p>
+                </div>
+                <div class="card">
+                    <h3>💸 Minimal Cost</h3>
+                    <p>The cost of a single diagnostic check is just 4.5 tenge — an ultra-affordable solution that enables mass-scale deployment of the technology.</p>
+                </div>
+                <div class="card">
+                    <h3>🚀 1000× Efficiency</h3>
+                    <p>Reduces analytical costs up to 1,000 times compared to traditional methods, saves clinician time, and automates the entire process.</p>
+                </div>
+                <div class="card">
+                    <h3>🧠 Intelligent Diagnostics</h3>
+                    <p>Trained on data from 1,659+ patients, the model identifies complex clinical patterns and detects risks invisible to the human eye.</p>
+                </div>
+                <div class="card">
+                    <h3>🛡️ Preventing Costly Treatment</h3>
+                    <p>Early detection enables prevention of severe treatment costs ranging from $15,000 to $30,000.</p>
+                </div>
+                <div class="card">
+                    <h3>🌍 Scalable Solution</h3>
+                    <p>Built on just 10 simple tests, the system can be easily deployed anywhere — from rural clinics to large hospitals.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">📈 Expected Outcome</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center; border-left: 5px solid var(--success);">
+                <p style="font-size: 1.1rem; color: var(--text-dark);">The system will help prevent severe complications through early CKD detection, reduce treatment costs, and improve the quality of life for patients.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 6rem;">
+            <h2 class="section-title">About the Author</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <img src="profile.png" alt="Yeреzhepov Sanzhar" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent-blue); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15); flex-shrink: 0;">
+                <div style="flex: 1; min-width: 250px; text-align: left;">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem; color: var(--primary-blue);">Yeреzhepov Sanzhar</h3>
+                    <p style="font-size: 1.1rem; color: var(--text-light);">
+                        9th-grade student at Regional Specialized Boarding School No. 3 for Gifted Children named after Abai (Kazakh-medium instruction), Kokshetau, Akmola Region, Kazakhstan.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script>
+        function setLang(lang) {
+            document.getElementById('lang-kk').style.display = 'none';
+            document.getElementById('lang-ru').style.display = 'none';
+            document.getElementById('lang-en').style.display = 'none';
+            document.getElementById('lang-' + lang).style.display = 'block';
+            document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            document.documentElement.lang = lang;
+        }
+    </script>
 </body>
 </html>
